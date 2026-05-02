@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo-lyttle.png";
 
 export function Footer() {
   return (
@@ -7,11 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
-            <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-accent">
-              <span className="absolute inset-0.5 rounded-[5px] bg-background" />
-              <span className="relative font-display text-base">L</span>
-            </span>
-            <span className="text-sm font-medium">Lyttle Smart Homes</span>
+            <img src={logo} alt="Lyttle Smart Homes logo" className="h-10 w-auto object-contain" />
           </div>
           <p className="mt-5 max-w-md text-sm text-muted-foreground leading-relaxed">
             Qualified Loxone Gold Partner and smart home installer based in Glenarm, serving all of Northern Ireland and the Republic of Ireland.
