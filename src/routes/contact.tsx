@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/contact")({
@@ -34,7 +34,18 @@ function Contact() {
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface"><Phone className="h-4 w-4 text-primary" /></span>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Phone / WhatsApp</p>
-                <a href="tel:+447447089033" className="font-display text-xl hover:text-primary transition">+44 7447 089033</a>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a href="tel:+447447089033" className="font-display text-xl hover:text-primary transition">+44 7447 089033</a>
+                  <a
+                    href="https://wa.me/447447089033"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#25D366]/40 px-3 py-1.5 text-xs font-medium text-[#25D366] hover:bg-[#25D366]/10 transition"
+                  >
+                    <MessageCircle className="h-3.5 w-3.5" />
+                    Chat on WhatsApp
+                  </a>
+                </div>
               </div>
             </li>
             <li className="flex items-start gap-4">

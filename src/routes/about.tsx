@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { ArrowUpRight } from "lucide-react";
-import control from "@/assets/control.jpg";
+import owner from "@/assets/owner-peter.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -30,8 +30,13 @@ function About() {
 
       <section className="mx-auto max-w-6xl px-6 lg:px-10 py-16 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
-          <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-elevated">
-            <img src={control} alt="Peter at work" className="h-full w-full object-cover" loading="lazy" />
+          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-elevated border border-border bg-surface">
+            <img src={owner} alt="Peter Lyttle, founder of Lyttle Smart Homes" className="h-full w-full object-cover object-top" loading="lazy" />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent p-5">
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Founder</p>
+              <p className="mt-1 font-display text-2xl text-foreground">Peter Lyttle</p>
+              <p className="text-sm text-muted-foreground">Electrical & Electronic Engineer</p>
+            </div>
           </div>
         </div>
         <div className="lg:col-span-7 space-y-6 text-muted-foreground leading-relaxed">

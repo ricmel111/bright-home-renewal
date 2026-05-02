@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/logo-lyttle.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,11 +17,8 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-accent shadow-glow">
-            <span className="absolute inset-0.5 rounded-[5px] bg-background" />
-            <span className="relative font-display text-base">L</span>
-          </span>
-          <span className="text-sm font-medium tracking-wide">Lyttle <span className="text-muted-foreground">Smart Homes</span></span>
+          <img src={logo} alt="Lyttle Smart Homes logo" className="h-8 w-auto object-contain" />
+          <span className="text-sm font-medium tracking-wide hidden sm:inline">Lyttle <span className="text-muted-foreground">Smart Homes</span></span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
