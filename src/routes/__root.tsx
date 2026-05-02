@@ -29,14 +29,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Lyttle Smart Homes — Loxone Gold Partner in Northern Ireland" },
+      { name: "description", content: "Qualified smart home installer based in Glenarm. Loxone Gold Partner serving Northern Ireland and the Republic of Ireland." },
+      { name: "author", content: "Lyttle Smart Homes Ltd" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
