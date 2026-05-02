@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
+import { Reveal } from "@/components/site/Reveal";
 import { Star, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/reviews")({
@@ -30,36 +31,46 @@ function Reviews() {
   return (
     <Layout>
       <section className="mx-auto max-w-5xl px-6 lg:px-10 pt-24 pb-12 text-center">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary">Reviews</p>
-        <h1 className="mt-6 font-display text-5xl lg:text-7xl leading-[0.95] text-balance">
-          Real words. Real homes.
-        </h1>
-        <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm">
-          <span className="flex gap-0.5 text-accent">
-            {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
-          </span>
-          5.0 average · Verified by Expert Trades
-        </div>
+        <Reveal direction="up" delay={0.1}>
+          <p className="text-xs uppercase tracking-[0.25em] text-primary">Reviews</p>
+        </Reveal>
+        <Reveal direction="up" delay={0.2}>
+          <h1 className="mt-6 font-display text-5xl lg:text-7xl leading-[0.95] text-balance">
+            Real words. Real homes.
+          </h1>
+        </Reveal>
+        <Reveal direction="up" delay={0.3}>
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm">
+            <span className="flex gap-0.5 text-accent">
+              {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
+            </span>
+            5.0 average · Verified by Expert Trades
+          </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
           {reviews.map((r, i) => (
-            <figure key={i} className="break-inside-avoid mb-6 rounded-2xl border border-border bg-surface p-7">
-              <div className="flex gap-0.5 text-accent">
-                {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-3.5 w-3.5 fill-current" />)}
-              </div>
-              <blockquote className="mt-4 text-sm leading-relaxed text-foreground/90">"{r.quote}"</blockquote>
-              <figcaption className="mt-5 text-xs uppercase tracking-[0.18em] text-muted-foreground">— {r.author}</figcaption>
-            </figure>
+            <Reveal key={i} delay={(i % 3) * 0.1} direction="up" className="break-inside-avoid mb-6">
+              <figure className="rounded-2xl border border-border bg-surface p-7">
+                <div className="flex gap-0.5 text-accent">
+                  {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-3.5 w-3.5 fill-current" />)}
+                </div>
+                <blockquote className="mt-4 text-sm leading-relaxed text-foreground/90">"{r.quote}"</blockquote>
+                <figcaption className="mt-5 text-xs uppercase tracking-[0.18em] text-muted-foreground">— {r.author}</figcaption>
+              </figure>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 lg:px-10 py-16 text-center">
-        <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-glow">
-          Become the next happy client <ArrowUpRight className="h-4 w-4" />
-        </Link>
+        <Reveal direction="up">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-glow">
+            Become the next happy client <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </Reveal>
       </section>
     </Layout>
   );
