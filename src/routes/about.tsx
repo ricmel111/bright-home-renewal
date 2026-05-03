@@ -3,16 +3,18 @@ import { Layout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
 import { ArrowUpRight } from "lucide-react";
 import owner from "@/assets/owner-peter.png";
+import { buildPageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Peter Lyttle — Lyttle Smart Homes" },
-      { name: "description", content: "Meet Peter Lyttle, qualified electrical engineer and Loxone Gold Partner behind Lyttle Smart Homes." },
-      { property: "og:title", content: "About — Lyttle Smart Homes" },
-      { property: "og:description", content: "Engineering precision, hospitality at heart." },
-    ],
-  }),
+  head: () =>
+    buildPageSeo({
+      path: "/about",
+      title: "About Peter Lyttle — Lyttle Smart Homes",
+      description:
+        "Meet Peter Lyttle, qualified electrical engineer and Loxone Gold Partner behind Lyttle Smart Homes.",
+      ogTitle: "About — Lyttle Smart Homes",
+      ogDescription: "Engineering precision, hospitality at heart.",
+    }),
   component: About,
 });
 

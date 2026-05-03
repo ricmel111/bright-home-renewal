@@ -1,17 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
+import { buildPageSeo } from "@/lib/seo";
 import { Lightbulb, Thermometer, Speaker, Blinds, Camera, Cpu, Shield, Zap, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Smart Home Installation by Lyttle Smart Homes" },
-      { name: "description", content: "Loxone smart home installation: lighting, heating, audio, shading, security and full home integration in NI and ROI." },
-      { property: "og:title", content: "Services — Lyttle Smart Homes" },
-      { property: "og:description", content: "Lighting, heating, audio, shading, security and full Loxone integration." },
-    ],
-  }),
+  head: () =>
+    buildPageSeo({
+      path: "/services",
+      title: "Services — Smart Home Installation by Lyttle Smart Homes",
+      description:
+        "Loxone smart home installation: lighting, heating, audio, shading, security and full home integration in NI and ROI.",
+      ogTitle: "Services — Lyttle Smart Homes",
+      ogDescription: "Lighting, heating, audio, shading, security and full Loxone integration.",
+    }),
   component: Services,
 });
 

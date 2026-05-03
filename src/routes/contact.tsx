@@ -1,18 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
+import { buildPageSeo } from "@/lib/seo";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Lyttle Smart Homes" },
-      { name: "description", content: "Get in touch with Lyttle Smart Homes. Based in Glenarm, serving Northern Ireland and the Republic of Ireland." },
-      { property: "og:title", content: "Contact — Lyttle Smart Homes" },
-      { property: "og:description", content: "Tell us about your project." },
-    ],
-  }),
+  head: () =>
+    buildPageSeo({
+      path: "/contact",
+      title: "Contact Lyttle Smart Homes | Smart Home Consultation",
+      description:
+        "Get in touch with Lyttle Smart Homes in Glenarm. Call, email, or send an enquiry for smart home design and installation across Northern Ireland and the Republic of Ireland.",
+      ogTitle: "Contact Lyttle Smart Homes",
+      ogDescription: "Tell us about your smart home project and we will be in touch.",
+    }),
   component: Contact,
 });
 
