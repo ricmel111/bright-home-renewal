@@ -32,10 +32,10 @@
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
   --font-display: "Instrument Serif", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap");
 
 :root {
   --radius: 0.5rem;
