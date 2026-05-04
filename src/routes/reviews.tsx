@@ -1,17 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
+import { buildPageSeo } from "@/lib/seo";
 import { Star, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/reviews")({
-  head: () => ({
-    meta: [
-      { title: "Reviews — Lyttle Smart Homes" },
-      { name: "description", content: "Genuine, verified reviews from homeowners across Northern Ireland and the Republic of Ireland." },
-      { property: "og:title", content: "Reviews — Lyttle Smart Homes" },
-      { property: "og:description", content: "Real words from real clients." },
-    ],
-  }),
+  head: () =>
+    buildPageSeo({
+      path: "/reviews",
+      title: "Reviews — Lyttle Smart Homes",
+      description:
+        "Genuine, verified reviews from homeowners across Northern Ireland and the Republic of Ireland.",
+      ogDescription: "Real words from real clients.",
+    }),
   component: Reviews,
 });
 

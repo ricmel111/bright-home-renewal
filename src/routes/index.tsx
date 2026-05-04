@@ -1,20 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
+import { buildPageSeo } from "@/lib/seo";
 import { ArrowUpRight, Sparkles, ShieldCheck, MapPin, Star, Lightbulb, Speaker, Thermometer, Camera, Blinds, Cpu } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import control from "@/assets/control.jpg";
 import exterior from "@/assets/exterior.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Lyttle Smart Homes — Loxone Gold Partner in Northern Ireland" },
-      { name: "description", content: "Qualified smart home installer in Glenarm. Loxone Gold Partner serving Northern Ireland and the Republic of Ireland with lighting, audio, heating and security automation." },
-      { property: "og:title", content: "Lyttle Smart Homes — Loxone Gold Partner" },
-      { property: "og:description", content: "Beautifully integrated smart homes by Peter Lyttle. Loxone Gold Partner. Northern Ireland & ROI." },
-    ],
-  }),
+  head: () =>
+    buildPageSeo({
+      path: "/",
+      title: "Lyttle Smart Homes — Loxone Gold Partner in Northern Ireland",
+      description:
+        "Qualified smart home installer in Glenarm. Loxone Gold Partner serving Northern Ireland and the Republic of Ireland with lighting, audio, heating and security automation.",
+      ogTitle: "Lyttle Smart Homes — Loxone Gold Partner",
+      ogDescription:
+        "Beautifully integrated smart homes by Peter Lyttle. Loxone Gold Partner. Northern Ireland & ROI.",
+    }),
   component: Index,
 });
 
